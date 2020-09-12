@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, Vector2.up.y * jumpForce);
             jump++;
-            print("yes");
+            // print("yes");
         }
 
 
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         //shootting
         if (Input.GetMouseButtonUp(1) && shootTimer > ROF)
         {
-            print("pewpew");
+            // print("pewpew");
             
             GameObject bul = Instantiate(bullet, shootingLocation.position, shootingLocation.rotation);
             Bullet property = bul.GetComponent<Bullet>();
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
             dashDuration -= Time.deltaTime;
             
             dash = dir * dashSpeed;
-            print("speed");
+            // print("speed");
         }
         else
         {
@@ -166,8 +166,16 @@ public class PlayerController : MonoBehaviour
         print("You Took Dmg!");
         //TODO remove health
 
-        //TODO flash sprite red
+        //flash sprite red
         gameObject.GetComponent<Animation>().Play("Player_Damage");
+    }
+
+    public void Die()
+    {
+        print(":c");
+        gameObject.SetActive(false);
+
+        //TODO death screen
     }
 
     public IEnumerator Knockback(float duration, float power, float hDir)
