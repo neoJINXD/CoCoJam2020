@@ -12,8 +12,9 @@ public class PlayerController : MonoBehaviour
     public int jumpAmount = 1;
 
     private Rigidbody2D rb;
-    public Transform feet;
-    public Transform front;
+    public Transform frontTop;
+    public Transform frontBottom;
+    public Transform backBottom;
 
     public bool facingRight = true;
     private float movement = 0;
@@ -26,19 +27,24 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update() {
-        RaycastHit2D hitDown = Physics2D.Raycast(feet.transform.position, -Vector2.up, 0.005f);
-        
-        RaycastHit2D hitFront;
-        if (facingRight)
-            hitFront = Physics2D.Raycast(front.transform.position, Vector2.right, 0.05f);
-        else
-            hitFront = Physics2D.Raycast(front.transform.position, Vector2.left, 0.05f);
+        RaycastHit2D hitFrontBottom = Physics2D.Raycast(frontBottom.transform.position, -Vector2.up, 0.005f);
+        RaycastHit2D hitBackBottom = Physics2D.Raycast(backBottom.transform.position, -Vector2.up, 0.005f);
 
-        if (hitDown.collider || (hitFront.collider && movement != 0)) //if grounded
-        {
-            jump = 0;
+        RaycastHit2D hitTopFront;
+        RaycastHit2D hitBottomFront;
+
+        if (facingRight) {
+            hitTopFront = Physics2D.Raycast(frontTop.transform.position, Vector2.right, 0.05f);
+            hitBottomFront = Physics2D.Raycast(frontBottom.transform.position, Vector2.right, 0.05f);
+        } else {
+            hitTopFront = Physics2D.Raycast(frontTop.transform.position, Vector2.left, 0.05f);
+            hitBottomFront = Physics2D.Raycast(frontBottom.transform.position, Vector2.left, 0.05f);
         }
 
+        if ((hitFrontBottom.collider || hitBackBottom.collider) || ((hitTopFront.collider || hitBottomFront.collider) && movement != 0))
+        {
+            jump = 0; 
+        }
 
         if (jump < jumpAmount && Input.GetKeyDown(KeyCode.Space))
         {
