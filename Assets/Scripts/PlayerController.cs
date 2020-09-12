@@ -8,28 +8,30 @@ public class PlayerController : MonoBehaviour
 
         
     public float jumpForce = 10;
-    public int jump = 0;
+    private int jump = 0;
     public int jumpAmount = 1;
 
+    //Raycasts
     private Rigidbody2D rb;
     public Transform frontTop;
     public Transform frontBottom;
     public Transform backBottom;
 
+    //Shooting
     public Transform shootingLocation;
     public GameObject bullet;
     private int shootTimer = 0;
     public int ROF;
 
-
+    //Melee
     public GameObject sword;
     public Animator swish;
 
-
+    //Dash
     public float dashSpeed;
-    public float dashDuration;
+    private float dashDuration;
     public float initialTime;
-    public int dir;
+    private int dir;
     public bool isDashing = false;
 
 
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update() {
+        //raycast collision detection
         RaycastHit2D hitFrontBottom = Physics2D.Raycast(frontBottom.transform.position, -Vector2.up, 0.005f);
         RaycastHit2D hitBackBottom = Physics2D.Raycast(backBottom.transform.position, -Vector2.up, 0.005f);
 
@@ -65,6 +68,8 @@ public class PlayerController : MonoBehaviour
             jump = 0; 
         }
 
+
+        //jumping
         if (jump < jumpAmount && Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = new Vector2(rb.velocity.x, Vector2.up.y * jumpForce);
@@ -72,6 +77,9 @@ public class PlayerController : MonoBehaviour
             print("yes");
         }
 
+
+
+        //shootting
         if (Input.GetMouseButtonUp(1) && shootTimer > ROF)
         {
             print("pewpew");
@@ -83,6 +91,7 @@ public class PlayerController : MonoBehaviour
         }
         shootTimer++;
 
+        //melee
         if (Input.GetMouseButtonUp(0))
         {
             // print("brrrrrrr");
@@ -94,6 +103,7 @@ public class PlayerController : MonoBehaviour
             swish.Play("SwordSwish");
         }
 
+        //dashing
         if (dashDuration != 0 && Input.GetKeyDown(KeyCode.LeftShift))
         {
             isDashing = true;
@@ -108,13 +118,13 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-
         movement = Input.GetAxisRaw("Horizontal");
         
-        dir = facingRight ? 1 : -1;
-        
-        
 
+
+
+        dir = facingRight ? 1 : -1;
+    
         float dash = 0f;
 
         if (isDashing)
@@ -133,16 +143,11 @@ public class PlayerController : MonoBehaviour
         
         // print(movement);
         rb.velocity = new Vector2(dash + movement * speed * Time.deltaTime, rb.velocity.y);
+
         if (!facingRight && movement > 0)
             Flip();
         else if (facingRight && movement < 0)
             Flip();
-    }
-
-    void OnCollisionEnter2D(Collision2D other) 
-    {
-        if (other.transform.position.y <= transform.position.y)
-            jump = 0;
     }
 
     private void Flip()
