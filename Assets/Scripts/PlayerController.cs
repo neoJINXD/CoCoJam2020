@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     private int shootTimer = 0;
     public int ROF;
 
+
+    public GameObject sword;
+    public Animator swish;
+
     public bool facingRight = true;
     private float movement = 0;
 
@@ -68,6 +72,18 @@ public class PlayerController : MonoBehaviour
             shootTimer = 0;
         }
         shootTimer++;
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            print("brrrrrrr");
+            if (facingRight)
+                sword.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 60.0f);
+            else
+                sword.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 300.0f);
+            sword.SetActive(true);
+            swish.Play("SwordSwish");
+        }
+
     }
 
     void FixedUpdate()
