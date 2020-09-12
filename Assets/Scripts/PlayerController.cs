@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     public bool isDashing = false;
 
 
+    private bool allowMove = true;
+
 
     public bool facingRight = true;
     private float movement = 0;
@@ -138,11 +140,12 @@ public class PlayerController : MonoBehaviour
         {
             isDashing = false;
             dashDuration = initialTime;
-            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+            // rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
         
         // print(movement);
-        rb.velocity = new Vector2(dash + movement * speed * Time.deltaTime, rb.velocity.y);
+        if (allowMove)
+            rb.velocity = new Vector2(dash + movement * speed * Time.deltaTime, rb.velocity.y);
 
         if (!facingRight && movement > 0)
             Flip();
@@ -157,4 +160,30 @@ public class PlayerController : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
+
+    public void Damage(int dmg)
+    {
+        print("You Took Dmg!");
+        //TODO remove health
+
+        //TODO flash sprite red
+        gameObject.GetComponent<Animation>().Play("Player_Damage");
+    }
+
+    public IEnumerator Knockback(float duration, float power, float hDir)
+    {
+        float timer = 0;
+        allowMove = false;
+        while (duration > timer)
+        {
+            timer += Time.deltaTime;
+            // rb.AddForce(new Vector2(dir.x * 500, dir.y * power));
+            // print(hDir*-100);
+            rb.velocity = new Vector2(hDir * -100 * power, Vector2.up.y * power);
+        }
+        allowMove = true;
+        yield return 0;
+    }
+
+
 }
