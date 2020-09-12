@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1345717358644682219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4966345858540901295}
+  m_Layer: 0
+  m_Name: shooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4966345858540901295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345717358644682219}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.251, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2605175867155752966}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2605175865280924808
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,6 +206,7 @@ Transform:
   - {fileID: 2605175866894584800}
   - {fileID: 2605175866834176723}
   - {fileID: 652613451960800473}
+  - {fileID: 4966345858540901295}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -269,6 +300,8 @@ MonoBehaviour:
   frontTop: {fileID: 652613451960800473}
   frontBottom: {fileID: 2605175866834176723}
   backBottom: {fileID: 2605175865280924809}
+  shootingLocation: {fileID: 4966345858540901295}
+  bullet: {fileID: 9075558793214549180, guid: 01c38516605daec4e8f853bad476254b, type: 3}
   facingRight: 1
 --- !u!61 &2605175867155752967
 BoxCollider2D:

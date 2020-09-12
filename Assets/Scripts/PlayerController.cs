@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     public Transform frontBottom;
     public Transform backBottom;
 
+    public Transform shootingLocation;
+    public GameObject bullet;
+
     public bool facingRight = true;
     private float movement = 0;
 
@@ -53,6 +56,11 @@ public class PlayerController : MonoBehaviour
             print("yes");
         }
 
+        if (Input.GetMouseButtonUp(1))
+        {
+            print("pewpew");
+            Instantiate(bullet, shootingLocation.transform);
+        }
 
     }
 
