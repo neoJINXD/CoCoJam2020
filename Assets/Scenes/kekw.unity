@@ -586,12 +586,33 @@ PrefabInstance:
       propertyPath: swish
       value: 
       objectReference: {fileID: 1165954422}
+    - target: {fileID: 2605175867155753019, guid: 12c1b6cd117fee948b9efa663ffe888e,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605175867155753019, guid: 12c1b6cd117fee948b9efa663ffe888e,
+        type: 3}
+      propertyPath: initialTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748846255023695003, guid: 12c1b6cd117fee948b9efa663ffe888e,
+        type: 3}
+      propertyPath: initialTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748846255023695003, guid: 12c1b6cd117fee948b9efa663ffe888e,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5492070900846390581, guid: 12c1b6cd117fee948b9efa663ffe888e,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2748846255023695003, guid: 12c1b6cd117fee948b9efa663ffe888e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 12c1b6cd117fee948b9efa663ffe888e, type: 3}
 --- !u!4 &1301747470 stripped
 Transform:

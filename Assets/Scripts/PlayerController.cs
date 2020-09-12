@@ -25,6 +25,15 @@ public class PlayerController : MonoBehaviour
     public GameObject sword;
     public Animator swish;
 
+
+    public float dashSpeed;
+    public float dashDuration;
+    public float initialTime;
+    public int dir;
+    public bool isDashing = false;
+
+
+
     public bool facingRight = true;
     private float movement = 0;
 
@@ -33,6 +42,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        dashDuration = initialTime;
     }
 
     void Update() {
@@ -57,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         if (jump < jumpAmount && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = Vector2.up * jumpForce;
+            rb.velocity = new Vector2(rb.velocity.x, Vector2.up.y * jumpForce);
             jump++;
             print("yes");
         }
@@ -75,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            print("brrrrrrr");
+            // print("brrrrrrr");
             if (facingRight)
                 sword.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 60.0f);
             else
@@ -84,13 +94,45 @@ public class PlayerController : MonoBehaviour
             swish.Play("SwordSwish");
         }
 
+        if (dashDuration != 0 && Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isDashing = true;
+        }
+
+        if (dashDuration < 0)
+        {
+            isDashing = false;
+        }
+
     }
 
     void FixedUpdate()
     {
+
         movement = Input.GetAxisRaw("Horizontal");
+        
+        dir = facingRight ? 1 : -1;
+        
+        
+
+        float dash = 0f;
+
+        if (isDashing)
+        {
+            dashDuration -= Time.deltaTime;
+            
+            dash = dir * dashSpeed;
+            print("speed");
+        }
+        else
+        {
+            isDashing = false;
+            dashDuration = initialTime;
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+        }
+        
         // print(movement);
-        rb.velocity = new Vector2(movement * speed * Time.deltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(dash + movement * speed * Time.deltaTime, rb.velocity.y);
         if (!facingRight && movement > 0)
             Flip();
         else if (facingRight && movement < 0)
