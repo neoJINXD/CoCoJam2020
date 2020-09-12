@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
             // }
             killme();
         }
-
+        // Debug.DrawRay(transform.position, transform.right*0.5f, Color.red);
         // moves the bullet
         transform.Translate(transform.right * speed * Time.deltaTime);
     }

@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     public Transform shootingLocation;
     public GameObject bullet;
+    private int shootTimer = 0;
+    public int ROF;
 
     public bool facingRight = true;
     private float movement = 0;
@@ -56,12 +58,13 @@ public class PlayerController : MonoBehaviour
             print("yes");
         }
 
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1) && shootTimer > ROF)
         {
             print("pewpew");
-            Instantiate(bullet, shootingLocation.transform);
+            Instantiate(bullet, shootingLocation.position, shootingLocation.rotation);
+            shootTimer = 0;
         }
-
+        shootTimer++;
     }
 
     void FixedUpdate()
