@@ -11,6 +11,9 @@ public class Bullet : MonoBehaviour
     public float life = 10f;
 
     public float raycastDistance = 0.5f;
+    public bool isRight;
+
+    
 
     void Start()
     {
@@ -20,7 +23,12 @@ public class Bullet : MonoBehaviour
     void FixedUpdate()
     {
         // shoots a ray to detect collision with a collider
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, raycastDistance);
+        RaycastHit2D hit;
+        if (isRight)
+            hit = Physics2D.Raycast(transform.position, transform.right, raycastDistance);
+        else
+            hit = Physics2D.Raycast(transform.position, transform.right, raycastDistance);
+
         if (hit.collider != null)
         {
             // if (hit.collider.CompareTag("Enemy"))
@@ -33,7 +41,10 @@ public class Bullet : MonoBehaviour
         }
         // Debug.DrawRay(transform.position, transform.right*0.5f, Color.red);
         // moves the bullet
-        transform.Translate(transform.right * speed * Time.deltaTime);
+        if (isRight)
+            transform.Translate(transform.right * speed * Time.deltaTime);
+        else
+            transform.Translate(-transform.right * speed * Time.deltaTime);
     }
 
     private void killme()

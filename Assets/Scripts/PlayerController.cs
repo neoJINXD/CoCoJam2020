@@ -61,7 +61,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonUp(1) && shootTimer > ROF)
         {
             print("pewpew");
-            Instantiate(bullet, shootingLocation.position, shootingLocation.rotation);
+            
+            GameObject bul = Instantiate(bullet, shootingLocation.position, shootingLocation.rotation);
+            Bullet property = bul.GetComponent<Bullet>();
+            property.isRight = facingRight;
             shootTimer = 0;
         }
         shootTimer++;
