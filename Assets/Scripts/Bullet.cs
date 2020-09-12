@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
         if (isRight)
             hit = Physics2D.Raycast(transform.position, transform.right, raycastDistance);
         else
-            hit = Physics2D.Raycast(transform.position, transform.right, raycastDistance);
+            hit = Physics2D.Raycast(transform.position, -transform.right, raycastDistance);
 
         if (hit.collider != null)
         {
