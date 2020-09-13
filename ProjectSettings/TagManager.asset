@@ -32,7 +32,7 @@ TagManager:
   - 
   - Ground
   - 
-  - 
+  - vfx
   - 
   - 
   - 
@@ -42,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 1778936025
+    locked: 0
+  - name: Vfx
+    uniqueID: 1077130477
+    locked: 0
+  - name: Background
+    uniqueID: 1254674099
     locked: 0

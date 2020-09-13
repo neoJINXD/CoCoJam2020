@@ -6,7 +6,10 @@ public class Enemy : MonoBehaviour
 {
     public int health;
     
-    
+    public GameObject bloodEff;
+    // public ParticleSystem blood;
+
+
     void Update()
     {
         if (health <= 0)
@@ -20,7 +23,12 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDmg()
     {
+        if (bloodEff)
+            Instantiate(bloodEff, transform.position, Quaternion.identity);
+
         health--;
     }
+
+    
 
 }

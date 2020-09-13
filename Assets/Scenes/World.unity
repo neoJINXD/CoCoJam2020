@@ -311,7 +311,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -544,6 +544,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 8200435577573346501, guid: e72b1c72f0f679842bbf72c202d55a8f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 8200435577573346502, guid: e72b1c72f0f679842bbf72c202d55a8f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -604,6 +609,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 8200435577573346503, guid: e72b1c72f0f679842bbf72c202d55a8f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1778936025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200435577573346503, guid: e72b1c72f0f679842bbf72c202d55a8f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200435577573346503, guid: e72b1c72f0f679842bbf72c202d55a8f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e72b1c72f0f679842bbf72c202d55a8f, type: 3}
 --- !u!1001 &1205656992
@@ -617,6 +637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200435577573346501, guid: e72b1c72f0f679842bbf72c202d55a8f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 8200435577573346502, guid: e72b1c72f0f679842bbf72c202d55a8f,
         type: 3}
@@ -701,6 +726,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UsedByEffector
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267199965075508377, guid: e53af41afb5c8464b8cbee15a9aa6738,
+        type: 3}
+      propertyPath: bloodTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5214869547291809399, guid: e53af41afb5c8464b8cbee15a9aa6738,
         type: 3}
