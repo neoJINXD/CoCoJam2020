@@ -16,6 +16,7 @@ public class StateManager : MonoBehaviour
     public GameObject shopMenu;
 
     public GameObject helpMenu;
+    public GameObject helpBut;
 
     //Game properties
 
@@ -50,6 +51,7 @@ public class StateManager : MonoBehaviour
 
     void Update() 
     {
+        player = GameObject.Find("Player");
         healthText.text = health.ToString();
         if (health <= 0)
             Death();
@@ -109,6 +111,7 @@ public class StateManager : MonoBehaviour
         maxHealth = 100;
         shopMenu.SetActive(false);
         helpMenu.SetActive(false);
+        helpBut.SetActive(false);
         SceneManager.LoadScene("World");
     }
 
