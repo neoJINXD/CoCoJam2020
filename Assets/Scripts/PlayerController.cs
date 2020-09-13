@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
 
         //shootting
-        if (Input.GetMouseButtonUp(1) && shootTimer > ROF)
+        if (Input.GetMouseButtonUp(1) && shootTimer > ROF && Manager.GetComponent<StateManager>().hasRange)
         {
             // print("pewpew");
             
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
         
 
         //dashing
-        if (dashDuration != 0 && Input.GetKeyDown(KeyCode.LeftShift))
+        if (dashDuration != 0 && Input.GetKeyDown(KeyCode.LeftShift) && Manager.GetComponent<StateManager>().hasDash)
         {
             isDashing = true;
         }

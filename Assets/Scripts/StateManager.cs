@@ -19,6 +19,7 @@ public class StateManager : MonoBehaviour
     public int health = 100;
     // private int weapon; // current weapon
     public bool hasRange;
+    public bool hasDash;
 
     public TextMeshProUGUI healthText;
 
