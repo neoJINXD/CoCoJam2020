@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345717358644682219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.251, y: 0, z: 0}
+  m_LocalPosition: {x: 0.184, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2605175867155752966}
@@ -54,13 +54,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2506809039238736019}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.404, y: -0.015, z: 2.38}
-  m_LocalScale: {x: 2.4840622, y: 0.4431859, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.5, w: 0.8660254}
+  m_LocalPosition: {x: 0.37, y: -0.082, z: 2.38}
+  m_LocalScale: {x: 1.990746, y: 1.990746, z: 1.990746}
   m_Children: []
   m_Father: {fileID: 9043749617911011100}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60}
 --- !u!212 &6930368918245078505
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100,7 +100,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c4d5bbcd8e155a4a88b1421b98c4fdd, type: 3}
+  m_Sprite: {fileID: -1182821291677670348, guid: 93fbadefd8f0e34438a1df50d20fb5ec,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -187,7 +188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2605175866894584800
 Transform:
   m_ObjectHideFlags: 0
@@ -333,8 +334,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c4d5bbcd8e155a4a88b1421b98c4fdd, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -2311659948842064771, guid: 93fbadefd8f0e34438a1df50d20fb5ec,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -463,7 +465,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9043749617911011100}
   - component: {fileID: 9205887468165195063}
-  - component: {fileID: 5999960017984017048}
   m_Layer: 0
   m_Name: swish
   m_TagString: Untagged
@@ -505,18 +506,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5999960017984017048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5492070900846390581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0606367ed17706344bc2513738acd12c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8006809381437639404
 GameObject:
   m_ObjectHideFlags: 0
