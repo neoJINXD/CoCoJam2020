@@ -9,6 +9,10 @@ public class StateManager : MonoBehaviour
 
     private static StateManager instance;
 
+    public GameObject player;
+
+    public GameObject deathScreen;
+
     //Game properties
 
     public int maxHealth = 100;
@@ -29,11 +33,20 @@ public class StateManager : MonoBehaviour
         } else {
             instance = this;
         }
+        DontDestroyOnLoad(this);
     }
 
     void Start()
     {
+        health = maxHealth;
         healthText.text = health.ToString();
+    }
+
+    void Update() 
+    {
+        healthText.text = health.ToString();
+        if (health <= 0)
+            Death();
     }
 
    public void EnemyKilled()
@@ -46,21 +59,22 @@ public class StateManager : MonoBehaviour
        health -= amount;
    }
 
-    // public Dictionary<string, bool> GetAbilities()
-    // {
-    //     return abilities;
-    // }
-
-    // public bool PlayerCan(string ability)
-    // {
-    //     return this.abilities[ability];
-    // }
-
-    public void handleDeathReset()
+    public void Death()
     {
         // Reset State, convert max health to points to use for shop
-        
-        // 
+        player.GetComponent<PlayerController>().Die();
+        DeathScreenEnable();
+    }
+
+    public void DeathScreenEnable()
+    {
+        deathScreen.SetActive(true);
+
+    }
+    public void NoDeathScreen()
+    {
+        deathScreen.SetActive(false);
+
     }
 
     

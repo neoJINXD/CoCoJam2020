@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public GameObject Manager;
     public float speed = 5;
 
         
@@ -193,14 +195,17 @@ public class PlayerController : MonoBehaviour
 
         //flash sprite red
         gameObject.GetComponent<Animation>().Play("Player_Damage");
+
+        Manager.GetComponent<StateManager>().PlayerTookDamage(dmg);
     }
 
     public void Die()
     {
-        print(":c");
+        // print(":c");
         gameObject.SetActive(false);
 
         //TODO death screen
+        Manager.GetComponent<StateManager>().DeathScreenEnable();
     }
 
     public IEnumerator Knockback(float duration, float power, float hDir)

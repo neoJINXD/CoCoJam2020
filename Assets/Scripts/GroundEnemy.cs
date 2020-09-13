@@ -81,11 +81,7 @@ public class GroundEnemy : MonoBehaviour
     }
 
 
-    void OnDestroy()
-    {
-        // Play death animation or sumthing
-        print("A boi just died!");
-    }
+
 
     
     

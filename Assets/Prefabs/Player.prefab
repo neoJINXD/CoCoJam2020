@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e5335cf2bda1c46908adf50246fd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Manager: {fileID: 8834581570466633589, guid: b4afb7e93a3fd874aaf7d3d5a6a1e121, type: 3}
   speed: 500
   jumpForce: 10
   jumpAmount: 1
