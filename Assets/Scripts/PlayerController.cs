@@ -62,6 +62,8 @@ public class PlayerController : MonoBehaviour
 
     void Update() {
     
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+
         rangeDmg = Manager.GetComponent<StateManager>().rangeDmg;
         meleeDmg = Manager.GetComponent<StateManager>().meleeDmg;
 
