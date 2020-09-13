@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public GameObject sword;
     public Animator swish;
 
-    public float atkTimer;
+    private float atkTimer;
     public float startAtkTimer;
     public Transform hiltPos;
     public LayerMask enemyLayer;
