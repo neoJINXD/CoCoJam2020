@@ -10,5 +10,7 @@ public class ResetButton : MonoBehaviour
         SceneManager.LoadScene("Shop");
         // print("reee");
         Manager.GetComponent<StateManager>().NoDeathScreen();
+        Manager.GetComponent<StateManager>().ResetHealth();
+
     }
 }

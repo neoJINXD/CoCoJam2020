@@ -77,5 +77,9 @@ public class StateManager : MonoBehaviour
 
     }
 
+    public void ResetHealth()
+    {
+        health = maxHealth;
+    }
     
 }

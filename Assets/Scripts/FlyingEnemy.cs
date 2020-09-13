@@ -106,4 +106,9 @@ public class FlyingEnemy : MonoBehaviour
             );
         }
     }
+
+    void OnDestroy() 
+    {
+        player.GetComponent<PlayerController>().Manager.GetComponent<StateManager>().EnemyKilled();    
+    }
 }

@@ -81,7 +81,10 @@ public class GroundEnemy : MonoBehaviour
     }
 
 
-
+    void OnDestroy() 
+    {
+        target.GetComponent<PlayerController>().Manager.GetComponent<StateManager>().EnemyKilled();    
+    }
 
     
     
