@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         dashDuration = initialTime;
+        atkTimer = startAtkTimer;
     }
 
     void Update() {
@@ -100,7 +101,7 @@ public class PlayerController : MonoBehaviour
         shootTimer++;
 
         //melee animation and hit detection
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && atkTimer <= 0)
         {
             // print("brrrrrrr");
             if (facingRight)
@@ -117,8 +118,9 @@ public class PlayerController : MonoBehaviour
                 enemy.GetComponent<Enemy>().TakeDmg();
                 // print("I hit" + enemy.name);
             }
-
+            atkTimer = startAtkTimer;
         }
+        atkTimer-= Time.deltaTime;
 
         
 
