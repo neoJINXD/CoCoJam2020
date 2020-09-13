@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3556846496391487278}
   - component: {fileID: 3876584075063011783}
   m_Layer: 0
-  m_Name: birb_enemy
+  m_Name: Birb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717151126873723776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.286, y: -0.052, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.344, y: -0.153, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,8 +70,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 903c3126d8dc40f4799071f2afcd32c9, type: 3}
-  m_Color: {r: 0.038714837, g: 0.5471698, b: 0.08593299, a: 1}
+  m_Sprite: {fileID: 5406014013552167550, guid: b00f67db762cfb541b2ce6f01dc0d5da,
+    type: 3}
+  m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

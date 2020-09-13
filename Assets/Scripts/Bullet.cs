@@ -31,12 +31,15 @@ public class Bullet : MonoBehaviour
 
         if (hit.collider != null)
         {
-            // if (hit.collider.CompareTag("Enemy"))
-            // {
-                // print("pew");
+            if (hit.collider.CompareTag("Enemy"))
+            {
+                print("pew");
+                
+                // Just testing
+                Destroy(hit.collider.gameObject);
 
-                //TODO should damage the enemy that gets hit
-            // }
+                // TODO should damage the enemy that gets hit
+            }
             killme();
         }
         // Debug.DrawRay(transform.position, transform.right*0.5f, Color.red);
