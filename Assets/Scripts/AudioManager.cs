@@ -12,6 +12,7 @@ public class Sound {
 
     [Range(0.5f, 1.5f)]
     public float pitch = 1f;
+    public bool loop = true;
 
     private AudioSource source;
     public void SetSource(AudioSource _source)
@@ -22,6 +23,7 @@ public class Sound {
 
     public void Play()
     {
+        source.loop = loop;
         source.pitch = pitch;
         source.volume = volume;
         source.Play();
@@ -59,7 +61,7 @@ public class AudioManager : MonoBehaviour
             sounds[i].SetSource(go.AddComponent<AudioSource>());
         }
 
-        PlaySound("shop");
+        // PlaySound("shop");
     }
 
     public void PlaySound(string _name)
@@ -75,13 +77,4 @@ public class AudioManager : MonoBehaviour
         Debug.LogWarning("No sound with that name");
     }
 
-    public void PlayBattle()
-    {
-
-    }
-
-    public void PlayMainTheme()
-    {
-
-    }
 }

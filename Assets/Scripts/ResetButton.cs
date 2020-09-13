@@ -14,6 +14,6 @@ public class ResetButton : MonoBehaviour
         Manager.GetComponent<StateManager>().NoDeathScreen();
         Manager.GetComponent<StateManager>().ResetHealth();
         Manager.GetComponent<StateManager>().ResetStats();
-
+        Manager.GetComponent<StateManager>().audioManager.PlaySound("Shop");
     }
 }

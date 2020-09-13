@@ -9,7 +9,7 @@ public class StateManager : MonoBehaviour
 {
 
     private static StateManager instance;
-
+    public AudioManager audioManager;
     public GameObject player;
 
     public GameObject deathScreen;
@@ -45,6 +45,13 @@ public class StateManager : MonoBehaviour
 
     void Start()
     {
+
+        audioManager = AudioManager.instance;
+        if (audioManager = null)
+        {
+            Debug.LogError("Could not find audio manager for scene");
+        }
+
         health = maxHealth;
         healthText.text = health.ToString();
     }
@@ -113,6 +120,7 @@ public class StateManager : MonoBehaviour
         helpMenu.SetActive(false);
         helpBut.SetActive(false);
         SceneManager.LoadScene("World");
+        audioManager.PlaySound("Battle");
     }
 
     public void HelpMe()
