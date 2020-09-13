@@ -28,6 +28,12 @@ public class Sound {
         source.volume = volume;
         source.Play();
     }
+
+    public void Stop()
+    {
+        source.Stop();
+    }
+
 }
 
 public class AudioManager : MonoBehaviour
@@ -70,6 +76,19 @@ public class AudioManager : MonoBehaviour
         {
             if (sounds[i].name == _name) {
                 sounds[i].Play();
+                return;
+            }
+        }
+
+        Debug.LogWarning("No sound with that name");
+    }
+
+    public void StopSound(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == _name) {
+                sounds[i].Stop();
                 return;
             }
         }

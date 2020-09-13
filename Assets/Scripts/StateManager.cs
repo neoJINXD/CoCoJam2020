@@ -47,6 +47,7 @@ public class StateManager : MonoBehaviour
     {
 
         audioManager = AudioManager.instance;
+        audioManager.PlaySound("Shop");
         if (audioManager = null)
         {
             Debug.LogError("Could not find audio manager for scene");
@@ -115,12 +116,18 @@ public class StateManager : MonoBehaviour
     public void Play()
     {
         //TODO
+
+        if (audioManager == null)
+        {
+            Debug.LogWarning("Audio Manager not found");
+        }
+
         maxHealth = 100;
         shopMenu.SetActive(false);
         helpMenu.SetActive(false);
         helpBut.SetActive(false);
-        SceneManager.LoadScene("World");
         audioManager.PlaySound("Battle");
+        SceneManager.LoadScene("World");
     }
 
     public void HelpMe()
