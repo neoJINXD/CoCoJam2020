@@ -47,7 +47,7 @@ public class FlyingEnemy : MonoBehaviour
         if (idle || !player)
         {
             rb.velocity = Vector2.zero;
-            print("Birb is vibin");
+            // print("Birb is vibin");
             return;
         }
 

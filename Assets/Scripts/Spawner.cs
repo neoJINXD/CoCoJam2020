@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
     void Spawn() 
     {
         // getting location of spawn
-        print("OhImEn");
+        // print("OhImEn");
         float x = Random.Range(spawnTopLeft.transform.position.x, spawnBottomRight.transform.position.x);
         float y = Random.Range(spawnTopLeft.transform.position.y, spawnBottomRight.transform.position.y);
         // index = Random.Range(0, spawnPoints.Length);
