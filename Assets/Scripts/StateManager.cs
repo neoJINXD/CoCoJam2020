@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class StateManager : MonoBehaviour
 {
@@ -9,11 +11,15 @@ public class StateManager : MonoBehaviour
 
     //Game properties
 
-    private int maxHealth;
-    private int health;
-    private int weapon; // current weapon
-    private Dictionary<string, bool> abilities; // boolean flags for current available abilities player is allowed
-    private int level;
+    public int maxHealth = 100;
+    public int health = 100;
+    // private int weapon; // current weapon
+    public bool hasRange;
+
+    public TextMeshProUGUI healthText;
+
+    // private Dictionary<string, bool> abilities; // boolean flags for current available abilities player is allowed
+    // private int level;
     
     void Awake() 
     {
@@ -25,27 +31,30 @@ public class StateManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        healthText.text = health.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public void EnemyKilled()
+   {
+       maxHealth++;
+   }
 
-    public Dictionary<string, bool> GetAbilities()
-    {
-        return abilities;
-    }
+   public void PlayerTookDamage(int amount)
+   {
+       health -= amount;
+   }
 
-    public bool PlayerCan(string ability)
-    {
-        return this.abilities[ability];
-    }
+    // public Dictionary<string, bool> GetAbilities()
+    // {
+    //     return abilities;
+    // }
+
+    // public bool PlayerCan(string ability)
+    // {
+    //     return this.abilities[ability];
+    // }
 
     public void handleDeathReset()
     {
