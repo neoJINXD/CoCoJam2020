@@ -20,6 +20,7 @@ public class StateManager : MonoBehaviour
     // private int weapon; // current weapon
     public bool hasRange;
     public bool hasDash;
+    public int numJumps;
 
     public TextMeshProUGUI healthText;
 
@@ -81,6 +82,26 @@ public class StateManager : MonoBehaviour
     public void ResetHealth()
     {
         health = maxHealth;
+    }
+
+    public void BuyJump()
+    {
+        numJumps++;
+        health -= 50;
+    }
+    public void BuyRange()
+    {
+        hasRange = true;
+        health -= 70;
+    }
+    public void BuyDash()
+    {
+        hasDash = true;
+        health -= 30;
+    }
+    public void Play()
+    {
+        //TODO
     }
     
 }
