@@ -390,6 +390,12 @@ MonoBehaviour:
   ROF: 250
   sword: {fileID: 5492070900846390581}
   swish: {fileID: 9205887468165195063}
+  startAtkTimer: 0.5
+  hiltPos: {fileID: 9043749617911011100}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  atkRange: 0.87
   dashSpeed: 20
   initialTime: 0.2
   isDashing: 0

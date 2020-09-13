@@ -27,6 +27,12 @@ public class PlayerController : MonoBehaviour
     public GameObject sword;
     public Animator swish;
 
+    public float atkTimer;
+    public float startAtkTimer;
+    public Transform hiltPos;
+    public LayerMask enemyLayer;
+    public float atkRange;
+
     //Dash
     public float dashSpeed;
     private float dashDuration;
@@ -93,7 +99,7 @@ public class PlayerController : MonoBehaviour
         }
         shootTimer++;
 
-        //melee
+        //melee animation and hit detection
         if (Input.GetMouseButtonUp(0))
         {
             // print("brrrrrrr");
@@ -103,7 +109,18 @@ public class PlayerController : MonoBehaviour
                 sword.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 300.0f);
             sword.SetActive(true);
             swish.Play("SwordSwish");
+
+            Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(hiltPos.position, atkRange, enemyLayer);
+
+            foreach (Collider2D enemy in enemiesHit)
+            {
+                enemy.GetComponent<Enemy>().TakeDmg();
+                // print("I hit" + enemy.name);
+            }
+
         }
+
+        
 
         //dashing
         if (dashDuration != 0 && Input.GetKeyDown(KeyCode.LeftShift))
@@ -116,6 +133,12 @@ public class PlayerController : MonoBehaviour
             isDashing = false;
         }
 
+    }
+
+    void OnDrawGizmosSelected() 
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(hiltPos.position, atkRange);    
     }
 
     void FixedUpdate()

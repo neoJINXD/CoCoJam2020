@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3876584075063011783}
   - component: {fileID: 5539499454517835499}
   - component: {fileID: 1334056452425576}
+  - component: {fileID: 5292039497667912462}
   m_Layer: 0
   m_Name: Birb
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717151126873723776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.344, y: -0.153, z: 0}
+  m_LocalPosition: {x: -1.379, y: -0.158, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,12 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4cc2cc1215b44086ae53601087827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   speed: 100
   damage: 1
   idle: 1
   detectionRadius: 50
   facingLeft: 1
+  player: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -125,4 +126,20 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!58 &5292039497667912462
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717151126873723776}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.015338302, y: -0.032868266}
+  serializedVersion: 2
+  m_Radius: 0.159145
