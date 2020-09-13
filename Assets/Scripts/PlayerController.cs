@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, Vector2.up.y * jumpForce);
             jump++;
+            // Manager.GetComponent<AudioManager>().PlaySound("jump");
             // print("yes");
         }
 
@@ -105,6 +106,7 @@ public class PlayerController : MonoBehaviour
             Bullet property = bul.GetComponent<Bullet>();
             property.isRight = facingRight;
             shootTimer = 0;
+            // Manager.GetComponent<AudioManager>().PlaySound("shoot");
         }
         shootTimer++;
 
@@ -118,6 +120,7 @@ public class PlayerController : MonoBehaviour
                 sword.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 300.0f);
             sword.SetActive(true);
             swish.Play("SwordSwish");
+            // Manager.GetComponent<AudioManager>().PlaySound("sword");
 
             Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(hiltPos.position, atkRange, enemyLayer);
 
@@ -197,7 +200,8 @@ public class PlayerController : MonoBehaviour
     public void Damage(int dmg)
     {
         print("You Took Dmg!");
-        //TODO remove health
+        
+        // Manager.GetComponent<AudioManager>().PlaySound("hit");
 
         //flash sprite red
         gameObject.GetComponent<Animation>().Play("Player_Damage");

@@ -28,6 +28,7 @@ public class GroundEnemy : MonoBehaviour
 
         // Vector2 targetDistance = Vector2.Distance(target.transform.position, rb.position);
         // Move towards player
+        if (target == null) Destroy(this);
         
     }   
 

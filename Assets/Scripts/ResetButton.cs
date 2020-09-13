@@ -7,7 +7,7 @@ public class ResetButton : MonoBehaviour
     public GameObject Manager;
     public void Restart()
     {
-        Manager.GetComponent<StateManager>().audioManager.PlaySound("Shop");
+        // Manager.GetComponent<StateManager>().audioManager.PlaySound("Shop");
         SceneManager.LoadScene("Shop");
         // print("reee");
         Manager.GetComponent<StateManager>().shopMenu.SetActive(true);

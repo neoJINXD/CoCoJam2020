@@ -9,7 +9,7 @@ public class StateManager : MonoBehaviour
 {
 
     private static StateManager instance;
-    public AudioManager audioManager;
+    // public AudioManager audioManager;
     public GameObject player;
 
     public GameObject deathScreen;
@@ -36,27 +36,28 @@ public class StateManager : MonoBehaviour
     // private Dictionary<string, bool> abilities; // boolean flags for current available abilities player is allowed
     // private int level;
     
-    void Awake() 
-    {
-        if (StateManager.instance != null && instance != this)
-        {   
-            Destroy(this.gameObject);
-        } else {
-            instance = this;
-        }
-        DontDestroyOnLoad(this);
-    }
+    // void Awake() 
+    // {
+    //     if (StateManager.instance != null && instance != this)
+    //     {   
+    //         Destroy(this.gameObject);
+    //     } else {
+    //         instance = this;
+    //     }
+    //     DontDestroyOnLoad(this);
+    // }
 
     void Start()
     {
 
         // audioManager = AudioManager.instance;
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-        audioManager.PlaySound("Shop");
-        if (audioManager == null)
-        {
-            Debug.LogError("Could not find audio manager for scene");
-        }
+        // audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        //audioManager = gameObject.GetComponent<AudioManager>();
+        // audioManager.PlaySound("Shop");
+        // if (audioManager == null)
+        // {
+        //     Debug.LogError("Could not find audio manager for scene");
+        // }
 
         health = maxHealth;
         healthText.text = health.ToString();
@@ -122,10 +123,10 @@ public class StateManager : MonoBehaviour
     {
         //TODO
 
-        if (audioManager == null)
-        {
-            Debug.LogWarning("Audio Manager not found");
-        }
+        // if (audioManager == null)
+        // {
+        //     Debug.LogWarning("Audio Manager not found");
+        // }
 
         maxHealth = 100;
         health = health > 100 ? 100 : health;
@@ -133,7 +134,7 @@ public class StateManager : MonoBehaviour
         helpMenu.SetActive(false);
         helpBut.SetActive(false);
         SceneManager.LoadScene("World");
-        audioManager.PlaySound("Battle");
+        // audioManager.PlaySound("Battle");
     }
 
     public void HelpMe()
