@@ -18,6 +18,7 @@ public class GroundEnemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        target = GameObject.Find("Player");
     }
 
     // Update is called once per frame

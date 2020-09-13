@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 5
+  speed: 100
   damage: 1
   idle: 0
   detectionRadius: 10
@@ -163,7 +163,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  bloodTime: 5
   bloodEff: {fileID: 7262659909329943167, guid: ee156240851918d4895a2f086021c022,
     type: 3}
-  blood: {fileID: 7262659909329943165, guid: ee156240851918d4895a2f086021c022, type: 3}
