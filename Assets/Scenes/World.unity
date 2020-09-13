@@ -416,6 +416,11 @@ PrefabInstance:
       propertyPath: detectionRadius
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5539499454517835499, guid: aa31cf6cc8274b943966bbede30985c0,
+        type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa31cf6cc8274b943966bbede30985c0, type: 3}
 --- !u!1001 &698681812
