@@ -88,4 +88,22 @@ public class FlyingEnemy : MonoBehaviour
         } 
         transform.localScale = scale;
     }
+
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            
+            //damages player
+            
+            other.gameObject.GetComponent<PlayerController>().Damage(damage);
+
+            //knockback
+            Vector2 knockDir = transform.position - other.transform.position;
+            StartCoroutine(
+                other.gameObject.GetComponent<PlayerController>().Knockback(0.05f, 5.0f, knockDir.x)
+            );
+        }
+    }
 }

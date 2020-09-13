@@ -32,13 +32,11 @@ public class Bullet : MonoBehaviour
         if (hit.collider != null)
         {
             if (hit.collider.CompareTag("Enemy"))
-            {
-                print("pew");
-                
-                // Just testing
-                Destroy(hit.collider.gameObject);
+            {   
+                GameObject enemy = hit.collider.gameObject;
 
-                // TODO should damage the enemy that gets hit
+                enemy.GetComponent<Enemy>().TakeDmg();
+
             }
             killme();
         }
