@@ -15,6 +15,8 @@ public class StateManager : MonoBehaviour
     public GameObject deathScreen;
     public GameObject shopMenu;
 
+    public GameObject helpMenu;
+
     //Game properties
 
     public int maxHealth = 100;
@@ -106,7 +108,13 @@ public class StateManager : MonoBehaviour
         //TODO
         maxHealth = 100;
         shopMenu.SetActive(false);
+        helpMenu.SetActive(false);
         SceneManager.LoadScene("World");
+    }
+
+    public void HelpMe()
+    {
+        helpMenu.SetActive(!helpMenu.activeSelf);
     }
 
     public void ResetStats()
