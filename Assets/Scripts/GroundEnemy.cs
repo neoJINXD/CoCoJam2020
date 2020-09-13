@@ -69,6 +69,7 @@ public class GroundEnemy : MonoBehaviour
         {
             
             //damages player
+            
             target.GetComponent<PlayerController>().Damage(damage);
 
             //knockback
@@ -77,8 +78,16 @@ public class GroundEnemy : MonoBehaviour
                 target.GetComponent<PlayerController>().Knockback(0.05f, 5.0f, knockDir.x)
             );
         }
-        
     }
+
+
+    void OnDestroy()
+    {
+        // Play death animation or sumthing
+        print("A boi just died!");
+    }
+
+    
     
 
     
