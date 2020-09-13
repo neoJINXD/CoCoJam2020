@@ -21,12 +21,12 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    public void TakeDmg()
+    public void TakeDmg(int dmg)
     {
         if (bloodEff)
             Instantiate(bloodEff, transform.position, Quaternion.identity);
 
-        health--;
+        health -= dmg;
     }
 
     

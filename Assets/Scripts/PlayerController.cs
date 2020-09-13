@@ -49,7 +49,8 @@ public class PlayerController : MonoBehaviour
     public bool facingRight = true;
     private float movement = 0;
 
-
+    public int rangeDmg;
+    public int meleeDmg;
 
     void Start()
     {
@@ -61,6 +62,9 @@ public class PlayerController : MonoBehaviour
 
     void Update() {
     
+        rangeDmg = Manager.GetComponent<StateManager>().rangeDmg;
+        meleeDmg = Manager.GetComponent<StateManager>().meleeDmg;
+
         //raycast collision detection
         RaycastHit2D hitFrontBottom = Physics2D.Raycast(frontBottom.transform.position, -Vector2.up, 0.005f);
         RaycastHit2D hitBackBottom = Physics2D.Raycast(backBottom.transform.position, -Vector2.up, 0.005f);
@@ -119,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
             foreach (Collider2D enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemy>().TakeDmg();
+                enemy.GetComponent<Enemy>().TakeDmg(meleeDmg);
                 // print("I hit" + enemy.name);
             }
             atkTimer = startAtkTimer;

@@ -13,10 +13,11 @@ public class Bullet : MonoBehaviour
     public float raycastDistance = 0.5f;
     public bool isRight;
 
-    
+    public GameObject Manager;
 
     void Start()
     {
+        Manager = GameObject.Find("GameManager");
         Invoke("killme", life); // calls the killme function after life time has expired
     }
 
@@ -35,7 +36,7 @@ public class Bullet : MonoBehaviour
             {   
                 GameObject enemy = hit.collider.gameObject;
 
-                enemy.GetComponent<Enemy>().TakeDmg();
+                enemy.GetComponent<Enemy>().TakeDmg(Manager.GetComponent<StateManager>().rangeDmg);
 
             }
             killme();

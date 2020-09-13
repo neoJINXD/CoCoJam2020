@@ -27,6 +27,10 @@ public class StateManager : MonoBehaviour
     public bool hasDash;
     public int numJumps;
 
+    public int rangeDmg = 2;
+
+    public int meleeDmg = 2;
+
     public TextMeshProUGUI healthText;
 
     // private Dictionary<string, bool> abilities; // boolean flags for current available abilities player is allowed
@@ -123,6 +127,7 @@ public class StateManager : MonoBehaviour
         }
 
         maxHealth = 100;
+        health = health > 100 ? 100 : health;
         shopMenu.SetActive(false);
         helpMenu.SetActive(false);
         helpBut.SetActive(false);
@@ -140,6 +145,18 @@ public class StateManager : MonoBehaviour
         hasDash = false;
         hasRange = false;
         numJumps = 1;
+        rangeDmg = 2;
+        meleeDmg = 2;
     }
     
+    public void UpgradeRange()
+    {
+        health -= 50;
+        rangeDmg += 5;
+    }
+    public void UpgradeMelee()
+    {
+        health -= 50;
+        meleeDmg += 5;
+    }
 }
