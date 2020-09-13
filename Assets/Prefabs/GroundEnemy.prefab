@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 100
-  damage: 1
+  damage: 5
   idle: 0
   detectionRadius: 10
   facingLeft: 1
