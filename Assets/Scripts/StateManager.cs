@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class StateManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class StateManager : MonoBehaviour
     public GameObject player;
 
     public GameObject deathScreen;
+    public GameObject shopMenu;
 
     //Game properties
 
@@ -102,6 +104,16 @@ public class StateManager : MonoBehaviour
     public void Play()
     {
         //TODO
+        maxHealth = 100;
+        shopMenu.SetActive(false);
+        SceneManager.LoadScene("World");
+    }
+
+    public void ResetStats()
+    {
+        hasDash = false;
+        hasRange = false;
+        numJumps = 1;
     }
     
 }

@@ -56,9 +56,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         dashDuration = initialTime;
         atkTimer = startAtkTimer;
+        Manager = GameObject.Find("GameManager");
     }
 
     void Update() {
+    
         //raycast collision detection
         RaycastHit2D hitFrontBottom = Physics2D.Raycast(frontBottom.transform.position, -Vector2.up, 0.005f);
         RaycastHit2D hitBackBottom = Physics2D.Raycast(backBottom.transform.position, -Vector2.up, 0.005f);

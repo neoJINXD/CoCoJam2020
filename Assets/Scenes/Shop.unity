@@ -2406,6 +2406,11 @@ PrefabInstance:
       propertyPath: deathScreen
       value: 
       objectReference: {fileID: 210490703}
+    - target: {fileID: 8834581570466633588, guid: b4afb7e93a3fd874aaf7d3d5a6a1e121,
+        type: 3}
+      propertyPath: shopMenu
+      value: 
+      objectReference: {fileID: 1705912090}
     - target: {fileID: 8834581570466633589, guid: b4afb7e93a3fd874aaf7d3d5a6a1e121,
         type: 3}
       propertyPath: m_Name
